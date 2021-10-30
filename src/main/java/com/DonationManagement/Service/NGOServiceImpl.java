@@ -15,8 +15,8 @@ public class NGOServiceImpl {
 	@Autowired
 	private NGORepository ngoRepository;
 	
-	public void addNGO(NGO ngo) {
-		ngoRepository.save(ngo);
+	public NGO addNGO(NGO ngo) {
+		return ngoRepository.save(ngo);
 		
 	}
 

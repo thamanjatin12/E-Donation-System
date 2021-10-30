@@ -22,9 +22,9 @@ public class NGOController {
 	
 	
 	@PostMapping("/add-NGO")
-	public String addNGO(@RequestBody NGO ngo) {
-		ngoServiceImpl.addNGO(ngo);
-		return "NGO Information Added!";
+	public NGO addNGO(@RequestBody NGO ngo) {
+		return ngoServiceImpl.addNGO(ngo);
+		
 	}
 	
 	@RequestMapping("/NGO-list")

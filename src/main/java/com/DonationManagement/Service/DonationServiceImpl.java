@@ -52,26 +52,26 @@ public class DonationServiceImpl {
 		List<Donor_Donations> info_list = new ArrayList<Donor_Donations>();
 		
 		Optional<Donor> d = donorRepository.findById(donorId);
-		Donor d1 = d.get();
-		
-		 int donation_id;
-		 int donor_id;
-		 int ngo_id;
-		 String donation_type;
-		 long amount;
-		
-		 String donor_name;
-		 String donor_username;
-		 String donor_password;
-		 String donor_email;
-		 Long donor_number;
-		 String donor_address;
-		
-		 
 		 
 		if(d.isEmpty()) {
 			throw new DonorNotFoundException("Donor Not Found With Donor Id: " + donorId);
 		}else {
+			
+			Donor d1 = d.get();
+			
+			 int donation_id;
+			 int donor_id;
+			 int ngo_id;
+			 String donation_type;
+			 long amount;
+			
+			 String donor_name;
+			 String donor_username;
+			 String donor_password;
+			 String donor_email;
+			 Long donor_number;
+			 String donor_address;
+			 
 			List<Donations> donations = donationRepository.getDonationsPerDoner(donorId);
 			
 			int length = donations.size();

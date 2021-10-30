@@ -13,6 +13,11 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.Range;
 
+import lombok.*;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity(name = "DONORDETAILS")
 public class Donor {
 	
@@ -38,92 +43,6 @@ public class Donor {
 	@NotNull
 	@Length(min = 5, max = 100)
 	private String address;
-	
-	
-	/*
-	 * @JsonIgnore
-	 * 
-	 * @ManyToMany (mappedBy = "registeredDonors") private List<NGO> registered_ngos
-	 * = new ArrayList<>();
-	 */
-	
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public Long getNumber() {
-		return number;
-	}
-
-	public void setNumber(Long number) {
-		this.number = number;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-	public int getDonated_ngo_id() {
-		return donated_ngo_id;
-	}
-
-	public void setDonated_ngo_id(int donated_ngo_id) {
-		this.donated_ngo_id = donated_ngo_id;
-	}
-	
-	/*
-	 * public List<NGO> getNgos_registered_list() { return ngos_registered_list; }
-	 * 
-	 * public void setNgos_registered_list(List<NGO> ngos_registered_list) {
-	 * this.ngos_registered_list = ngos_registered_list; }
-	 * 
-	 * public void addNGO(NGO ngo) { ngos_registered_list.add(ngo);
-	 * 
-	 * }
-	 */
-	
-	
 	
 	
 	

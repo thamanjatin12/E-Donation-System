@@ -28,7 +28,8 @@ public class DonorServiceImpl {
 		
 		int ngo_id = donor.getDonated_ngo_id();
 		Optional<NGO> ngo = ngoRepository.findById(ngo_id);
-		
+
+				
 		if(ngo.isEmpty()) {
 			throw new NGONotFoundException("NGO Not Found With NGO Id: " + ngo_id);
 		}else {
@@ -55,14 +56,14 @@ public class DonorServiceImpl {
 		int id = donor.getId();
 		int ngo_id = donor.getDonated_ngo_id();
 		
-		Donor d = donorRepository.findById(id).get();
+		Optional<Donor> d = donorRepository.findById(id);
 		Optional<NGO> ngo = ngoRepository.findById(ngo_id);
 		
 		if(ngo.isEmpty()) {
 			throw new NGONotFoundException("NGO Not Found With NGO Id: " + ngo_id);
 		}else {
-			BeanUtils.copyProperties(donor, d);
-			return donorRepository.save(d);
+
+			return donorRepository.save(donor);
 		}
 		
 	}
